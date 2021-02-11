@@ -1,7 +1,7 @@
 
 <div class="card shadow-sm" >
   <img class="card-img-top" src="https://www.meroemart.com/{{product.product_images}}" alt="Card image cap">
-  <div class="card-body">
+  <div class="card-body" [routerLink]="['/product',product.id]" >
       <p class="name">{{ product.product_name }}</p>
       <p class="price">
         <span class="old">
