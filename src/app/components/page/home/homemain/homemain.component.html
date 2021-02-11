@@ -1,0 +1,9 @@
+<app-home-categories></app-home-categories>
+<div class="section" *ngFor="let item of this.service.products">
+    <div class="title">
+        {{item.title}}
+    </div>
+    <div class="list">
+        <app-productgroup [products]="item.products"></app-productgroup>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.mobilenav{
+    z-index:99;
+    padding:20px 10px 15px 10px;
+    background: #27AE60;
+    
+    .title{
+        color:white;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+    .search{
+        border:none;
+        outline:none;
+        background: white;
+        border-radius: 4px;
+        color:#969696;
+        width:100%;
+        text-align:left;
+        padding:10px 20px;
+    }
+}
+
+.istop{
+    padding:10px !important;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    right: 0px;
+    .title{
+       display:none !important;
+    }
+   
+}

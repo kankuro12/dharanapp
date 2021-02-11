@@ -1,0 +1,9 @@
+<dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+    <app-mobilenav #navbar></app-mobilenav>
+
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+
+    <app-mobilefooter></app-mobilefooter>
+</dib>
