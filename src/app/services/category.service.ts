@@ -8,11 +8,12 @@ export class CategoryService {
   categories: any[]=[];
   loaded = false;
   constructor(private client: HttpClient) {
+    this.getCategory();
   }
+
   getCategory() {
     if (!this.loaded) {
       this.client.get('https://meroemart.com/api/categories').subscribe((response:any)=>{
-
         this.categories=response;
         this.categories=this.categories.slice(0,10);
         console.log(this.categories);

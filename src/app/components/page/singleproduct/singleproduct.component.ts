@@ -1,10 +1,12 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Variant } from 'src/app/Model/variant';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FavService } from 'src/app/services/fav.service';
 import { Location } from '@angular/common';
+import { CartService } from 'src/app/services/cart.service';
+import { QtyComponent } from '../../partial/qty/qty.component';
 
 
 
@@ -14,6 +16,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./singleproduct.component.scss']
 })
 export class SingleproductComponent implements OnInit {
+  disshown=true;
+  cardqty:number=0;
+  variant="none";
   recs:any[]=[];
   images: string[] = [];
   public innerWidth: any;
@@ -31,7 +36,10 @@ export class SingleproductComponent implements OnInit {
     autoHeight: true
   };
   active: boolean = false;
-  constructor(public client: HttpClient, private route: ActivatedRoute, public fav: FavService, public location: Location) {
+
+  @ViewChild('qty')qtyholder:QtyComponent;
+
+  constructor(public client: HttpClient,private router:Router, private route: ActivatedRoute, public fav: FavService, public location: Location,public cart:CartService) {
 
 
 
@@ -50,8 +58,8 @@ export class SingleproductComponent implements OnInit {
 
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
-    this.route.queryParams.subscribe(params => {
-      console.log(params);
+    // this.route.queryParams.subscribe(params => {
+      // console.log(params);
       this.id = this.route.snapshot.paramMap.get('id');
       this.client.get("https://meroemart.com/api/product/" + this.id).subscribe((res: any) => {
         this.product = res;
@@ -89,16 +97,34 @@ export class SingleproductComponent implements OnInit {
         this.recs.push(this.product);
         this.recs.push(this.product);
       });
-    });
+    // });
 
   }
 
+  clicked(){
+    this.cart.addToCart(
+        this.product.product_id,
+        this.product.product_name,
+        this.product.product_images,
+        this.qtyholder.qty,
+        this.price,
+        this.variant,
+    );
+    this.router.navigate(['/cart']);
+    
+
+  }
+ 
   choose(event) {
     console.log(event);
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
+  }
+
+  toogle(){
+    this.disshown=!this.disshown;
   }
 
 }

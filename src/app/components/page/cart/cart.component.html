@@ -1,0 +1,11 @@
+<dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+  <app-othenav title="My Cart" #navbar></app-othenav>
+  <div class="main">
+    <div *ngFor="let item of this.cartservice.items">
+
+      <app-cartitem [cart]="item" (changed)="changed($event)" (deleted)="delete($event)"></app-cartitem>
+    </div>
+   
+  </div>
+  <app-mobilefooter></app-mobilefooter>
+</dib>

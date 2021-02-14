@@ -6,7 +6,10 @@ import { HttpClient } from '@angular/common/http'
 export class HomepageService {
   products:any[]=[];
   sliders:any[]=[];
-  constructor(private client:HttpClient) { }
+  constructor(private client:HttpClient) {
+    this.loadProduct();
+    this.loadSlider();
+   }
   loaded = false;
 
   loadProduct(){

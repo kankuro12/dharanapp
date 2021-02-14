@@ -10,7 +10,10 @@ export class ShopService {
   hasmoredata=true;
   step=0;
   lock=false;
-  constructor(private client :HttpClient) { }
+  constructor(private client :HttpClient) {
+
+    this.loadData();
+   }
 
   loadData(){
     if(this.hasmoredata && !this.lock){

@@ -1,0 +1,25 @@
+.bb {
+    background: #27ae60;
+    overflow: scroll;
+    &.topped{
+      background: #efefef !important;
+  
+    }
+    .main {
+      background: #efefef;
+      width: 100%;
+      /* margin: 0px 10px; */
+      padding: 7px 7px;
+      overflow: scroll;
+      border-radius: 15px;
+      bottom: 0px;
+      min-height: 150vh;;
+      div.post {
+        background: white;
+        border-radius: 15px;
+        margin: 5px;
+        padding: 10px;
+      }
+    }
+  }
+  

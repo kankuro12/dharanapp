@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './components/page/cart/cart.component';
+import { CartitemComponent } from './components/page/cart/cartitem/cartitem.component';
 import { HomemainComponent } from './components/page/home/homemain/homemain.component';
 import { ShopmainComponent } from './components/page/shop/shopmain/shopmain.component';
 import { SingleproductComponent } from './components/page/singleproduct/singleproduct.component';
@@ -14,12 +16,17 @@ const routes: Routes = [
       {
         path:'shop',
         component:ShopmainComponent
-      }
+      },
+     
     ]
   },
   {
     path:"product/:id",
     component:SingleproductComponent
+  },
+  {
+    path:"cart",
+    component:CartComponent
   }
 ];
 @NgModule({

@@ -8,19 +8,23 @@ import { Component, Input, OnInit } from '@angular/core';
 export class QtyComponent implements OnInit {
 
   constructor() { }
-  qty=1;
-  @Input()max:number
+  qty:number=1;
+  @Input()max:string
   ngOnInit(): void {
   }
 
   addQty(num){
-    this.qty+=num;
+    let _max=parseFloat(this.max);
+    this.qty+=parseFloat( num);
     if(this.qty<1){
       this.qty=1;
     }
 
-    if(this.qty>this.max){
-      this.qty=this.max;
+    console.log(this.qty,num);
+
+    if(this.qty >_max){
+
+      this.qty=_max;
     }
   }
 

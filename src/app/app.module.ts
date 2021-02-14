@@ -4,7 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -27,11 +27,15 @@ import { SmallComponent } from './components/partial/imageviwer/small/small.comp
 import { ImageviwerComponent } from './components/partial/imageviwer/imageviwer.component';
 import { SingleproductComponent } from './components/page/singleproduct/singleproduct.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SingletemplateComponent } from './components/template/singletemplate/singletemplate.component';
+import { OthenavComponent } from './components/partial/othenav/othenav.component';
+import { CartComponent } from './components/page/cart/cart.component';
+import { CartitemComponent } from './components/page/cart/cartitem/cartitem.component';
 
 @NgModule({
-  declarations: [AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent],
+  declarations: [AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
