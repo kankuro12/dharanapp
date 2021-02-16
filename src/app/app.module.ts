@@ -31,9 +31,10 @@ import { SingletemplateComponent } from './components/template/singletemplate/si
 import { OthenavComponent } from './components/partial/othenav/othenav.component';
 import { CartComponent } from './components/page/cart/cart.component';
 import { CartitemComponent } from './components/page/cart/cartitem/cartitem.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent],
+  declarations: [AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService],

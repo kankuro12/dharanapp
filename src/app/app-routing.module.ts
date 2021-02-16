@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/auth/login/login.component';
 import { CartComponent } from './components/page/cart/cart.component';
 import { CartitemComponent } from './components/page/cart/cartitem/cartitem.component';
 import { HomemainComponent } from './components/page/home/homemain/homemain.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:"cart",
     component:CartComponent
+  },
+  {
+    path:"login",
+    component:LoginComponent
   }
 ];
 @NgModule({
