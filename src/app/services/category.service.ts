@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { ApiService } from './api.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,7 +8,7 @@ export class CategoryService {
 
   categories: any[]=[];
   loaded = false;
-  constructor(private client: HttpClient) {
+  constructor(private client: ApiService) {
     this.getCategory();
   }
 

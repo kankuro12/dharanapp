@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { ApiService } from './api.service';
 @Injectable({
   providedIn: 'root'
 })
 export class HomepageService {
   products:any[]=[];
   sliders:any[]=[];
-  constructor(private client:HttpClient) {
+  constructor(private client:ApiService) {
     this.loadProduct();
     this.loadSlider();
    }
@@ -18,7 +19,6 @@ export class HomepageService {
         this.products=response;
         console.log(this.products);
       });
-
     }
   }
 
