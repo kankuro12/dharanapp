@@ -7,6 +7,7 @@ import { FavService } from 'src/app/services/fav.service';
 import { Location } from '@angular/common';
 import { CartService } from 'src/app/services/cart.service';
 import { QtyComponent } from '../../partial/qty/qty.component';
+import { ViewedService } from 'src/app/services/viewed.service';
 
 
 
@@ -39,7 +40,7 @@ export class SingleproductComponent implements OnInit {
 
   @ViewChild('qty')qtyholder:QtyComponent;
 
-  constructor(public client: HttpClient,private router:Router, private route: ActivatedRoute, public fav: FavService, public location: Location,public cart:CartService) {
+  constructor(public client: HttpClient,private router:Router, private route: ActivatedRoute, public fav: FavService, public location: Location,public cart:CartService,public viewservice:ViewedService) {
 
 
 
@@ -63,6 +64,7 @@ export class SingleproductComponent implements OnInit {
       this.id = this.route.snapshot.paramMap.get('id');
       this.client.get("https://meroemart.com/api/product/" + this.id).subscribe((res: any) => {
         this.product = res;
+        this.viewservice.add(this.product.product_id,this.product.product_name,this.product.product_images);
         this.active = this.fav.favs.includes(this.product.product_id);
         if (this.product.stocktype == 1) {
           this.product.variants.forEach(attr => {

@@ -1,0 +1,109 @@
+<dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+  <app-othenav title="User Dashboard" #navbar></app-othenav>
+  <div class="main">
+    <div class="post">
+      <div class="userinfo">
+        <div *ngIf="authservice.logged;else notlogged">
+
+        </div>
+        <ng-template #notlogged>
+          <div class="notlogged">
+            <span [routerLink]="['/login']" routerLinkActive="router-link-active">Login To your Account</span>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+    <div class="post">
+      <div class="title">
+        <span>Orders</span>
+      </div>
+
+      <div class="row m-0">
+        <div class="col-3 p-0">
+          <div class="item">
+
+            <div class="icon">
+              <img
+                src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1"
+                alt="">
+            </div>
+            <div class="text">
+              Pending
+            </div>
+          </div>
+        </div>
+        <div class="col-3 p-0">
+          <div class="item">
+
+            <div class="icon">
+              <img
+                src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1"
+                alt="">
+            </div>
+            <div class="text">
+              Processing
+            </div>
+          </div>
+        </div>
+        <div class="col-3 p-0">
+          <div class="item">
+
+            <div class="icon">
+              <img
+                src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1"
+                alt="">
+            </div>
+            <div class="text">
+              Shipped
+            </div>
+          </div>
+        </div>
+        <div class="col-3 p-0">
+          <div class="item">
+
+            <div class="icon">
+              <img
+                src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1"
+                alt="">
+            </div>
+            <div class="text">
+              Completed
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="post">
+      <div class="title">
+        Services
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="item">
+            <div class="icon">
+
+            </div>
+            <div class="text">
+              asdfads
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="title">
+        Viewed Products
+      </div>
+      <div class="row m-0">
+        <div class="col-3 p-1" *ngFor="let item of viewservice.views">
+          
+          <img src="https://meroemart.com/{{item.image}}" class="p-image" alt="" [routerLink]="['/product', item.id]">
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-mobilefooter></app-mobilefooter>
+</dib>

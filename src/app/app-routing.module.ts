@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './components/auth/dashboard/dashboard.component';
+import { MaindashbaordComponent } from './components/auth/dashboard/maindashbaord/maindashbaord.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { CartComponent } from './components/page/cart/cart.component';
 import { CartitemComponent } from './components/page/cart/cartitem/cartitem.component';
@@ -32,7 +34,13 @@ const routes: Routes = [
   {
     path:"login",
     component:LoginComponent
+  },
+  {
+    path:"user",
+    component:DashboardComponent,
+   
   }
+
 ];
 @NgModule({
   imports: [

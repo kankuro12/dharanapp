@@ -1,0 +1,65 @@
+.bb {
+  background: #27ae60;
+  overflow: scroll;
+  &.topped {
+    background: #efefef !important;
+  }
+  .main {
+    background: #efefef;
+    width: 100%;
+    /* margin: 0px 10px; */
+    padding: 7px 7px;
+    overflow: scroll;
+    border-radius: 15px;
+    bottom: 0px;
+    min-height: 150vh;
+    .post {
+      background: white;
+      border-radius: 15px;
+      margin: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      .title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 7px;
+      }
+      .userinfo {
+        display: flex;
+        .image {
+          flex: 3;
+          img {
+            width: 100%;
+          }
+        }
+        .name {
+          flex: 6;
+        }
+        .notlogged {
+          flex: 1;
+          font-size: 0.8rem;
+          text-align: center;
+        }
+      }
+
+      .item {
+        flex: 1;
+        text-align: center;
+        .icon {
+          width: 40px;
+          margin: auto;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+        .text {
+          font-weight: 500;
+          font-size: 0.7rem;
+          color: #616161;
+        }
+      }
+      .p-image{
+          border-radius:5px ;
+      }
+    }
+  }
+}

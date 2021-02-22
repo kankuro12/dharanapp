@@ -4,7 +4,7 @@
   <div class="card-body" [routerLink]="['/product',product.product_id]" >
       <p class="name">{{ product.product_name }}</p>
       <p class="price">
-        <span class="old">
+        <span class="old" *ngIf="product.onsale">
           Rs. {{ product.mark_price }}
         </span>
         <span class="new">
