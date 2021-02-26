@@ -4,7 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -34,12 +34,18 @@ import { CartitemComponent } from './components/page/cart/cartitem/cartitem.comp
 import { LoginComponent } from './components/auth/login/login.component';
 import { DashboardComponent } from './components/auth/dashboard/dashboard.component';
 import { MaindashbaordComponent } from './components/auth/dashboard/maindashbaord/maindashbaord.component';
+import { AuthserviceService } from './services/auth/authservice.service';
+import { ApiService } from './services/api.service';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { LoaderComponent } from './components/partial/loader/loader.component';
+import { LoaderService } from './services/loader.service';
+import { CheckoutComponent } from './components/page/checkout/checkout.component';
 
 @NgModule({
-  declarations: [AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent],
+  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule,ReactiveFormsModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService,AuthserviceService,ApiService,LoaderService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

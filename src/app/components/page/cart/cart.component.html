@@ -5,7 +5,18 @@
 
       <app-cartitem [cart]="item" (changed)="changed($event)" (deleted)="delete($event)"></app-cartitem>
     </div>
-   
+    <div style="padding:10px;margin:5px;background:white;border-radius:15px;" *ngIf="this.cartservice.total>0">
+      <div style="display: flex;justify-content: space-between;">
+
+        <strong>
+          Total
+        </strong>
+        <span>
+          {{this.cartservice.total}}
+        </span>
+      </div>
+      <button class="btn btn-success btn-block" style="background: #27AE60;" [routerLink]="['/checkout']" routerLinkActive="router-link-active" >Checkout</button>
+    </div>
   </div>
   <app-mobilefooter></app-mobilefooter>
 </dib>

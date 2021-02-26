@@ -1,0 +1,73 @@
+<dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+  <app-othenav title="Checkout" #navbar></app-othenav>
+  <div class="main">
+    <div style="padding:10px;margin:5px;background:white;border-radius:15px;margin-bottom:15px;" *ngIf="this.cartservice.total>0">
+      <div class="total">
+
+        <strong>
+          Total
+        </strong>
+        <span>
+          {{this.cartservice.total}}
+        </span>
+      </div>
+      <div class="">
+        <div class="loginform">
+          <div  >
+            <div class="fg">
+              <input type="text"   placeholder="Phone Number" [(ngModel)]="phone" > 
+            </div>
+            <div class="fg">
+              <input type="text"   placeholder="First Name" [(ngModel)]="fname">
+            </div>
+            <div class="fg">
+              <input type="text"  placeholder="Last Name" [(ngModel)]="lname">
+            </div>
+            <div class="fg">
+              <input type="text"   placeholder="Enter Address"[(ngModel)]="address">
+            </div>
+            
+            <div class="fg">
+              <input type="email"  placeholder="Enter Email Address" [(ngModel)]="email">
+            </div>
+            <div *ngIf="!this.auth.logged">
+              <!-- <div class="d-flex">
+
+                <ion-toggle [(ngModel)]="olduser"></ion-toggle> <span style="padding:12px;padding-left:0px;font-size:0.8rem;">Old User</span>
+              </div> -->
+              <div class="fg">
+
+                <div class="login" (click)="gotoLogin()">
+                  I Already Have A Account, Login?
+                </div> 
+              </div>
+              <div class="fg">
+                <textarea type="password" placeholder="Enter  Password" [(ngModel)]="extramessage"></textarea>
+              </div>
+              <div class="fg">
+                <input type="password" placeholder="Enter  Password" [(ngModel)]="password">
+              </div>
+              <div class="fg" *ngIf="!olduser">
+                <input type="password" placeholder="Retype Password" [(ngModel)]="repass">
+              </div>
+            </div>
+          </div>
+          <div class="fg" *ngIf="this.auth.logged;else singupandcheckout">
+            <button class="btn btn-success btn-block" style="background: #27AE60;" (click)="checkout()">Checkout</button>
+          </div>
+          <ng-template #singupandcheckout>
+            <div class="fg" >
+              <button class="btn btn-success btn-block" style="background: #27AE60;" (click)="signupAndCheckout()">Signup and Checkout</button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    
+    </div>
+    <div *ngFor="let item of this.cartservice.items">
+
+      <app-cartitem [cart]="item" (changed)="changed($event)" (deleted)="delete($event)"></app-cartitem>
+    </div>
+    
+  </div>
+</dib>

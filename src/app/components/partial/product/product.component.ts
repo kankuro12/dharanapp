@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Setting } from 'src/app/Model/setting';
 import {FavService} from 'src/app/services/fav.service'
 @Component({
   selector: 'app-product',
@@ -6,6 +7,7 @@ import {FavService} from 'src/app/services/fav.service'
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  url=Setting.url;
   liked:boolean=false;
   @Input() product:any;
   constructor(public fav:FavService) { }

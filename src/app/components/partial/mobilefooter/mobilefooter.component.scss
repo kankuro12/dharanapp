@@ -42,12 +42,13 @@
         width: 70px;
         height: 70px;
         border-radius: 45px;
+        padding:15px;
         .cartcount{
             position: absolute;
             top: -15px;
             height: 30px;
             width: 30px;
-            background: chartreuse;
+            background: #00EE63;
             color: white;
             padding: 2px;
             font-weight: 600;
@@ -80,7 +81,7 @@
         text-align: center;
         outline: transparent;
         &.active{
-            color:rgb(206, 252, 0);
+            color:#f2ff85;
         }
         .icon{
             svg{

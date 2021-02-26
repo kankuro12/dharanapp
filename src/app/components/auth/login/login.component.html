@@ -4,21 +4,44 @@
         <img src="/assets/appicon.gif" alt="">
       </div>
       <div class="title text-center">
-        Login
+        SIGN IN
       </div>
       <div class="loginform">
+
+        <form  [formGroup]="form">
+            <div class="fg">
+              <input type="text" placeholder="Enter Phone Number" formControlName="phone">
+            </div>
+            <div class="fg">
+              <input type="password" placeholder="Enter your Password" formControlName="password">
+            </div>
+          </form>
           <div class="fg">
-            <input type="email" placeholder="Enter Email Address">
-          </div>
-          <div class="fg">
-            <input type="email" placeholder="Enter your Password">
-          </div>
-          <div class="fg">
-            <button class="loginbtn">Login</button>
+            <button class="loginbtn" (click)="login()">Login</button>
           </div>
       </div>
-      <div class="text-center"></div>
-
+      <div class="text-center">
+         <span class="pl-3"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="40" height="40"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#3498db"><path d="M86,6.88c-43.62608,0 -79.12,35.49048 -79.12,79.12c0,43.62952 35.49392,79.12 79.12,79.12c43.62952,0 79.12,-35.49048 79.12,-79.12c0,-43.62952 -35.49048,-79.12 -79.12,-79.12zM110.08,55.04h-11.3176c-6.66672,0 -9.3224,1.5652 -9.3224,6.21264v10.98736h20.64l-3.44,17.2h-17.2v44.72h-20.64v-44.72h-10.32v-17.2h10.32v-9.54256c0,-14.534 5.79984,-24.85744 22.63864,-24.85744c9.01968,0 18.64136,3.44 18.64136,3.44z"></path></g></g></svg></span>
+         <span class=pl-3><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="40" height="40"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffc100"><path d="M89.42656,165.12c-43.63156,0 -79.13344,-35.48844 -79.13344,-79.12c0,-43.63156 35.50187,-79.12 79.13344,-79.12c19.76656,0 38.68656,7.32344 53.29312,20.62656l2.66063,2.43219l-26.09563,26.09563l-2.41875,-2.06938c-7.65937,-6.5575 -17.40156,-10.17219 -27.43937,-10.17219c-23.27375,0 -42.22063,18.93344 -42.22063,42.20719c0,23.27375 18.94688,42.20719 42.22063,42.20719c16.78344,0 30.04625,-8.57312 36.29469,-23.17969h-39.73469v-35.62281l77.57469,0.1075l0.57781,2.72781c4.04469,19.20219 0.80625,47.44781 -15.5875,67.65781c-13.57188,16.72969 -33.45938,25.22219 -59.125,25.22219z"></path></g></g></svg></span>
+      </div>
+      <div class="signup" (click)="gotoSignUp()" >
+        Don't have a Account?
+        <a >Register</a>
+        
+      </div>
+      
     </div>
+    <button class="close" (click)="close()">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+      width="25" height="25"
+      viewBox="0 0 172 172"
+      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#000000"><path d="M31.4975,21.715l-9.7825,9.7825l54.5025,54.5025l-54.825,54.9325l9.675,9.675l54.9325,-54.825l54.825,54.825l9.7825,-9.7825l-54.825,-54.825l54.5025,-54.5025l-9.7825,-9.7825l-54.5025,54.5025z"></path></g></g></svg>
+    </button>
 </div>
  

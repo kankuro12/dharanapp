@@ -69,10 +69,10 @@
             <div class="image" style="z-index:0;position:sticky;top:0;">
                 <owl-carousel-o [options]="customOptions">
                     <ng-template carouselSlide>
-                        <img src='https://meroemart.com/{{product.product_images}}' class="w-100" alt="">
+                        <img src='{{url+product.product_images}}' class="w-100" alt="">
                     </ng-template>
                     <ng-template *ngFor="let image of product.images" carouselSlide>
-                        <img src='https://meroemart.com/{{image.image}}' class="w-100" alt="">
+                        <img src='{{url+image.image}}' class="w-100" alt="">
                     </ng-template>
 
                 </owl-carousel-o>

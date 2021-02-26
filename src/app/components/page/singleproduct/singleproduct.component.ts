@@ -8,6 +8,9 @@ import { Location } from '@angular/common';
 import { CartService } from 'src/app/services/cart.service';
 import { QtyComponent } from '../../partial/qty/qty.component';
 import { ViewedService } from 'src/app/services/viewed.service';
+import { ApiService } from '../../../services/api.service';
+import { LoaderService } from 'src/app/services/loader.service';
+import { Setting } from 'src/app/Model/setting';
 
 
 
@@ -17,6 +20,7 @@ import { ViewedService } from 'src/app/services/viewed.service';
   styleUrls: ['./singleproduct.component.scss']
 })
 export class SingleproductComponent implements OnInit {
+  url=Setting.url;
   disshown=true;
   cardqty:number=0;
   variant="none";
@@ -40,8 +44,8 @@ export class SingleproductComponent implements OnInit {
 
   @ViewChild('qty')qtyholder:QtyComponent;
 
-  constructor(public client: HttpClient,private router:Router, private route: ActivatedRoute, public fav: FavService, public location: Location,public cart:CartService,public viewservice:ViewedService) {
-
+  constructor(private loader:LoaderService,public client: ApiService,private router:Router, private route: ActivatedRoute, public fav: FavService, public location: Location,public cart:CartService,public viewservice:ViewedService) {
+      this.loader.show(true);
 
 
   }
@@ -62,7 +66,7 @@ export class SingleproductComponent implements OnInit {
     // this.route.queryParams.subscribe(params => {
       // console.log(params);
       this.id = this.route.snapshot.paramMap.get('id');
-      this.client.get("https://meroemart.com/api/product/" + this.id).subscribe((res: any) => {
+      this.client.get(Setting.apiurl+ "product/" + this.id).subscribe((res: any) => {
         this.product = res;
         this.viewservice.add(this.product.product_id,this.product.product_name,this.product.product_images);
         this.active = this.fav.favs.includes(this.product.product_id);
@@ -87,9 +91,9 @@ export class SingleproductComponent implements OnInit {
         }
 
         var tempimages = [];
-        tempimages.push("https://meroemart.com/" + this.product.product_images);
+        tempimages.push(Setting.url + this.product.product_images);
         this.product.images.forEach(img => {
-          tempimages.push("https://meroemart.com/" + img.image);
+          tempimages.push(Setting.url + img.image);
 
         });
 
@@ -98,6 +102,7 @@ export class SingleproductComponent implements OnInit {
         console.log(this.product);
         this.recs.push(this.product);
         this.recs.push(this.product);
+        this.loader.show(false);
       });
     // });
 

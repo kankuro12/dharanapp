@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductgroupComponent } from 'src/app/components/partial/productgroup/productgroup.component';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ScrollserviceService } from 'src/app/services/scrollservice.service';
 import { ShopService } from 'src/app/services/shop.service';
 
@@ -13,7 +14,7 @@ export class ShopmainComponent implements OnInit {
   @ViewChild('products') products: ElementRef;
   ontop:boolean=false;
   catshow:boolean=false;
-  constructor(private scrollservice:ScrollserviceService,public shop:ShopService) {
+  constructor(private scrollservice:ScrollserviceService,public shop:ShopService,private loader:LoaderService) {
 
       this.scrollservice.scrollEvent.subscribe(data=>{
         this.scrolled(data);

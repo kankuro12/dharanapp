@@ -21,6 +21,11 @@ export class CartService {
 
   }
 
+  emptyCart(){
+    this.items=[];
+    this.calculateAll();
+  }
+
   changeQty(_qty,_ident){
     let i = this.items.findIndex((obj => obj.ident == _ident));
     this.items[i].qty=_qty;
