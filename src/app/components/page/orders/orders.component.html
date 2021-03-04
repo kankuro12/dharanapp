@@ -1,0 +1,11 @@
+<div class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+  <app-othenav [title]="title" #navbar></app-othenav>
+  <div class="main">
+    <div *ngFor="let order of orders" class="post shadow  ">
+      
+
+        <app-singleorder [order]="order"></app-singleorder>
+      
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@ import {
   FormGroup,
   FormBuilder,
   Validators,
-  FormControl,
+  FormControl, 
   EmailValidator
 } from '@angular/forms';
 import { LoaderService } from 'src/app/services/loader.service';

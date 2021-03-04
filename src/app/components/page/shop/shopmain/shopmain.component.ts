@@ -22,6 +22,11 @@ export class ShopmainComponent implements OnInit {
       });
   }
 
+  ngAfterViewInit()	{
+    console.log('after view init');
+    this.loader.show(false);
+  }
+
   ngOnInit() {
     this.shop.loadData();
   }
@@ -34,10 +39,9 @@ export class ShopmainComponent implements OnInit {
   }
   scrolled(top){
       this.ontop=top>120;
-      console.log(this.ontop);
+      console.log(this.ontop,this.products.nativeElement.offsetHeight,top+(window.innerHeight*1.5));
       if((top+(window.innerHeight*1.5))>this.products.nativeElement.offsetHeight){
         if(this.shop.hasmoredata){
-
           this.shop.loadData();
         }
       }

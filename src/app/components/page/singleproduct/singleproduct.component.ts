@@ -11,6 +11,7 @@ import { ViewedService } from 'src/app/services/viewed.service';
 import { ApiService } from '../../../services/api.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { Setting } from 'src/app/Model/setting';
+import { Product } from 'src/app/Model/product';
 
 
 
@@ -24,7 +25,7 @@ export class SingleproductComponent implements OnInit {
   disshown=true;
   cardqty:number=0;
   variant="none";
-  recs:any[]=[];
+  recs:Product[]=[];
   images: string[] = [];
   public innerWidth: any;
   price = 0;
@@ -98,10 +99,18 @@ export class SingleproductComponent implements OnInit {
         });
 
         this.images = tempimages;
-        console.log(this.variants);
-        console.log(this.product);
-        this.recs.push(this.product);
-        this.recs.push(this.product);
+        let localrecs:Product[]=[];
+        this.product.recom.forEach(pp => {
+          let pi=new Product();
+          pi.name=pp.product_name;
+          pi.id=pp.product_id;
+          pi.onsale=pp.onsale;
+          pi.newrate=pp.mark_price;
+          pi.oldrate=pp.mark_price;
+          pi.image=this.url+pp.product_images;
+          localrecs.push(pi);
+        });
+        this.recs=localrecs;
         this.loader.show(false);
       });
     // });

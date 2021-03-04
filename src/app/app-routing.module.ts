@@ -11,6 +11,8 @@ import { HomemainComponent } from './components/page/home/homemain/homemain.comp
 import { ShopmainComponent } from './components/page/shop/shopmain/shopmain.component';
 import { SingleproductComponent } from './components/page/singleproduct/singleproduct.component';
 import { MainComponent } from './components/template/main/main.component';
+import { OrdersComponent } from './components/page/orders/orders.component';
+import { AuthserviceService } from './services/auth/authservice.service';
 
 const routes: Routes = [
   {
@@ -49,12 +51,18 @@ const routes: Routes = [
     path:"user",
     component:DashboardComponent,
    
+  },
+  {
+    path:"orders/:status",
+    component:OrdersComponent,
+    canActivate:[AuthserviceService]
   }
+
 
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules})
   ],
   exports: [RouterModule]
 })

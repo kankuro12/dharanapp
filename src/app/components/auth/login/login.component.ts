@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   form:FormGroup;
   constructor(private auth:AuthserviceService, private router:Router,private formBuilder:FormBuilder,private loader:LoaderService) { 
     if(this.auth.logged){
-      this.router.navigate(["/user"]);
+      this.router.navigate([this.auth.redirect]);
     }
     this.auth.signupstart.subscribe((res)=>{
         this.loader.show(true);
@@ -28,9 +28,18 @@ export class LoginComponent implements OnInit {
     });
     this.auth.authSet.subscribe((res)=>{
 
-        this.router.navigate(['/user']);
+        this.router.navigate([this.auth.redirect]);
     });
   }
+  ionViewWillEnter(){
+    console.log("view enter");
+    console.log('user loaded view enter');
+    if(this.auth.logged){
+      this.router.navigate(['/user']);
+
+    }
+  }
+
   ngOnInit() {
     this.form=this.formBuilder.group({
         phone:[null,[Validators.required,Validators.minLength(10)]],

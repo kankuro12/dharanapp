@@ -73,6 +73,15 @@ export class SignupComponent implements OnInit {
     }
   }
 
+  ionViewWillEnter(){
+    console.log("view enter");
+    console.log('user loaded view enter');
+    if(this.auth.logged){
+      this.router.navigate(['/user']);
+
+    }
+  }
+
   checkPasswords(group: FormGroup) { // here we have the 'passwords' group
     const phone = group.get('phone').value;
 

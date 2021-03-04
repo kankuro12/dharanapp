@@ -44,7 +44,11 @@ export class AuthserviceService {
   }
 
   canActivate(ext: ActivatedRouteSnapshot,ate: RouterStateSnapshot  ) {
-    return this.authenticated;
+    if(!this.logged){
+      this.redirect=ate.url;
+      this.router.navigate(['/login']);
+    }
+    return true;
   }
 
   login(){
