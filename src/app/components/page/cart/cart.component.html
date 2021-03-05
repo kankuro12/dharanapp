@@ -1,5 +1,5 @@
 <dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
-  <app-othenav title="My Cart" #navbar></app-othenav>
+  <app-othenav title="My Cart" [backshow]="false" #navbar></app-othenav>
   <div class="main">
     <div *ngFor="let item of this.cartservice.items">
 

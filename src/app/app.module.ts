@@ -42,9 +42,12 @@ import { LoaderService } from './services/loader.service';
 import { CheckoutComponent } from './components/page/checkout/checkout.component';
 import { OrdersComponent } from './components/page/orders/orders.component';
 import { SingleorderComponent } from './components/page/orders/singleorder/singleorder.component';
+import { CategoryallComponent } from './components/page/categoryall/categoryall.component';
+import { CategorywiseComponent } from './components/page/categorywise/categorywise.component';
+import { SearchComponent } from './components/page/search/search.component';
 
 @NgModule({
-  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent],
+  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule,ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService,AuthserviceService,ApiService,LoaderService],

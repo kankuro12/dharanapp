@@ -9,6 +9,7 @@ import { ScrollserviceService } from 'src/app/services/scrollservice.service';
 })
 export class OthenavComponent implements OnInit {
  istop=false;
+  @Input()backshow:boolean=true;
   @Input()title:string;
   constructor(private scroll:ScrollserviceService,public location: Location) { 
 
@@ -19,6 +20,7 @@ export class OthenavComponent implements OnInit {
 
   
   back() {
+
     console.log('back');
     this.location.back();
   }

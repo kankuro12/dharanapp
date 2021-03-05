@@ -1,0 +1,17 @@
+<div class="bb" [ngClass]="{'topped': topped}" >
+  <app-othenav title="Categories" #navbar></app-othenav>
+  <div class="main">
+      <div class="row m-0">
+        <div class="col-4 p-0" *ngFor="let cat of categories">
+          <div class="cat" (click)="loadProducts(cat)">
+
+            <img style="width:60%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
+            <div class="text">
+                {{ cat.cat_name }}
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <app-mobilefooter></app-mobilefooter>
+</div>

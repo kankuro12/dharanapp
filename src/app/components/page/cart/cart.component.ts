@@ -10,17 +10,12 @@ import { OthenavComponent } from '../../partial/othenav/othenav.component';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  topped=false;
-  constructor(public scrolle:ScrollserviceService,public cartservice:CartService) { }
+ 
+  constructor(public cartservice:CartService) { }
   @ViewChild('navbar') navbar:OthenavComponent
   ngOnInit() {}
 
-  scroll(event){
-    this.topped=event.srcElement.scrollTop>40;
-    this.navbar.istop=this.topped;
-    console.log("from main",event.srcElement.scrollTop);
-    this.scrolle.set(event.srcElement.scrollTop);
-  }
+  
 
   changed(data:Cart){
     this.cartservice.changeQty(data.qty,data.ident);

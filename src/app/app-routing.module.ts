@@ -13,57 +13,69 @@ import { SingleproductComponent } from './components/page/singleproduct/singlepr
 import { MainComponent } from './components/template/main/main.component';
 import { OrdersComponent } from './components/page/orders/orders.component';
 import { AuthserviceService } from './services/auth/authservice.service';
+import { CategorywiseComponent } from './components/page/categorywise/categorywise.component';
+import { CategoriesComponent } from './components/page/home/categories/categories.component';
+import { CategoryallComponent } from './components/page/categoryall/categoryall.component';
+import { SearchComponent } from './components/page/search/search.component';
 
 const routes: Routes = [
   {
     path: '',
-    component:MainComponent,
+    component: MainComponent,
     children: [
       { path: 'home', component: HomemainComponent },
       {
-        path:'shop',
-        component:ShopmainComponent
+        path: 'shop',
+        component: ShopmainComponent,
       },
-     
-    ]
+    ],
   },
   {
-    path:"product/:id",
-    component:SingleproductComponent
+    path: 'search',
+    component: SearchComponent,
   },
   {
-    path:"cart",
-    component:CartComponent
+    path: 'category/:id',
+    component: CategorywiseComponent,
   },
   {
-    path:"checkout",
-    component:CheckoutComponent
+    path: 'product/:id',
+    component: SingleproductComponent,
   },
   {
-    path:"login",
-    component:LoginComponent
+    path: 'categories',
+    component: CategoryallComponent,
   },
   {
-    path:"signup",
-    component:SignupComponent
+    path: 'cart',
+    component: CartComponent,
   },
   {
-    path:"user",
-    component:DashboardComponent,
-   
+    path: 'checkout',
+    component: CheckoutComponent,
   },
   {
-    path:"orders/:status",
-    component:OrdersComponent,
-    canActivate:[AuthserviceService]
-  }
-
-
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'user',
+    component: DashboardComponent,
+  },
+  {
+    path: 'orders/:status',
+    component: OrdersComponent,
+    canActivate: [AuthserviceService],
+  },
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

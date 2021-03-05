@@ -1,33 +1,16 @@
-<div class="category-container">
-  <div class="category">
-    <img style="width:100%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
-    <div class="text">
-        some category
+<div class="main-container">
+
+  <div class="title">
+    <span class="cat-title">Categories</span>
+    <span class="link" [routerLink]="['/categories']" routerLinkActive="router-link-active" >View all</span>
+  </div>
+  <div class="category-container">
+    <div class="category" *ngFor="let cat of this.cat.categories" [routerLink]="['/category',cat.cat_id]" routerLinkActive="router-link-active" >
+      <img style="width:100%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
+      <div class="text">
+          {{ cat.cat_name }}
+      </div>
     </div>
+    
   </div>
-  <div class="category">
-    <img style="width:100%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
-    <div class="text">
-        some category
-    </div>
-  </div>
-  <div class="category">
-    <img style="width:100%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
-    <div class="text">
-        some category
-    </div>
-  </div>
-  <div class="category">
-    <img style="width:100%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
-    <div class="text">
-      some category
-  </div>
-  </div>
-  <div class="category">
-    <img style="width:100%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
-    <div class="text">
-      some category
-  </div>
-  </div>
-  
 </div>

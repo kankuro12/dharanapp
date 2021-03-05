@@ -39,6 +39,7 @@ export class HomepageService {
           this.products.push(npg);
         });
         console.log(this.products);
+        this.loaded=true;
       });
     }
   }

@@ -82,7 +82,7 @@
                 <div class="section">
                     <div class="category">asdfasd</div>
                     <div class="name">{{product.product_name}}</div>
-                    <div class="price">
+                    <div class="price" *ngIf="price>0">
                         <span class="old" *ngIf="product.onsale">{{oldprice}}</span>
                         <span class="new"><span>Rs </span> {{price}}</span>
                     </div>
@@ -93,8 +93,7 @@
                         <div class="stick">
     
                             <div *ngFor="let v of variants" class="variant">
-                                <app-variant-chooser [variant]="v" (selected)="choose($event)
-                                    "></app-variant-chooser>
+                                <app-variant-chooser [variant]="v" (selected)="choose($event)" [choosenvariants]="cv"></app-variant-chooser>
                             </div>
                             <div *ngIf="stock>0; else nostock">
                                 <div class="d-block d-md-flex">
@@ -141,7 +140,7 @@
                     </div>
                 </div>
 
-                <div class="sectionrec">
+                <div class="sectionrec" *ngIf="recs.length>0">
                     <div class="title">
                         You May Also Like
                     </div>

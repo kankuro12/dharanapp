@@ -1,5 +1,5 @@
 <dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
-  <app-othenav title="User Dashboard" #navbar></app-othenav>
+  <app-othenav title="User Dashboard" [backshow]="false" #navbar></app-othenav>
   <div class="main">
     <div class="post">
       <div class="userinfo">
@@ -103,10 +103,10 @@
 
     <div class="post">
       <div class="title">
-        Viewed Products
+        Latest Viewed Products
       </div>
       <div class="row m-0">
-        <div class="col-3 p-1" *ngFor="let item of viewservice.views">
+        <div class="col-3 p-1" *ngFor="let item of viewservice.views.slice(0,12)">
           
           <img src="{{url+item.image}}" class="p-image" alt="" [routerLink]="['/product', item.id]">
         </div>

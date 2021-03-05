@@ -26,7 +26,7 @@ import { Setting } from 'src/app/Model/setting';
 export class CheckoutComponent implements OnInit {
   form: FormGroup;
   olduser=false;
-  topped=false;
+  
   user=new User();
   // checkout datas
     phone:string="";
@@ -71,13 +71,7 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
-  scroll(event){
-    this.topped=event.srcElement.scrollTop>40;
-    this.navbar.istop=this.topped;
-    console.log("from main",event.srcElement.scrollTop);
-    this.scrolle.set(event.srcElement.scrollTop);
-  }
-
+ 
   gotoLogin(){
     this.auth.redirect="/checkout";
     this.auth.prevurl="/checkout";
@@ -106,6 +100,7 @@ export class CheckoutComponent implements OnInit {
         fname:this.fname,
         lname:this.lname,
       });
+      console.log('signup started');
     }
   } 
 
@@ -138,6 +133,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   validate(){
+    console.log(this);
     if(this.phone.length!=10 ){
       alert("Please Enter Correct Phone no");
       return false;
@@ -173,5 +169,7 @@ export class CheckoutComponent implements OnInit {
         return false;
       }
     }
+
+    return true;
   }
 }

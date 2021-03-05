@@ -9,7 +9,10 @@
     padding-bottom:100px;
     overflow: scroll;
     .title{
-        background:#27AE60;
-        color:white;
+        background: #27AE60;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
 }

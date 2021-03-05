@@ -1,4 +1,4 @@
-<dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+<dib class="bb" [ngClass]="{'topped': topped}" >
   <app-othenav title="Checkout" #navbar></app-othenav>
   <div class="main">
     <div style="padding:10px;margin:5px;background:white;border-radius:15px;margin-bottom:15px;" *ngIf="this.cartservice.total>0">
@@ -30,6 +30,9 @@
             <div class="fg">
               <input type="email"  placeholder="Enter Email Address" [(ngModel)]="email">
             </div>
+            <div class="fg">
+              <textarea placeholder="Extra message" [(ngModel)]="extramessage"></textarea>
+            </div>
             <div *ngIf="!this.auth.logged">
               <!-- <div class="d-flex">
 
@@ -41,9 +44,7 @@
                   I Already Have A Account, Login?
                 </div> 
               </div>
-              <div class="fg">
-                <textarea type="password" placeholder="Enter  Password" [(ngModel)]="extramessage"></textarea>
-              </div>
+              
               <div class="fg">
                 <input type="password" placeholder="Enter  Password" [(ngModel)]="password">
               </div>

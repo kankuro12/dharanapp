@@ -1,21 +1,33 @@
-.category-container{
-    display:flex;
-    flex-direction: row;
-    background:white;
+
+.main-container{
     padding:10px;
     border-radius: 10px;
     margin: 5px;
-    .category{
-        text-align: center;
-        padding:5px 3px;
-        width:25%;
-        overflow: hidden;
-        img{
-            border-radius: 10px;
-        }
-        .text{
-            font-weight:700;
-            font-size:0.8rem;
+    background:white;
+    .title{
+        display:flex;
+        justify-content: space-between;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding-bottom: 5px;
+        color: #464646;
+    }
+    .category-container{
+        display:flex;
+        flex-direction: row;
+       
+        .category{
+            text-align: center;
+            padding:5px 3px;
+            width:25%;
+            overflow: hidden;
+            img{
+                border-radius: 10px;
+            }
+            .text{
+                font-weight:700;
+                font-size:0.8rem;
+            }
         }
     }
 }

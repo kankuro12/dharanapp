@@ -15,9 +15,9 @@ export class CategoryService {
 
   getCategory() {
     if (!this.loaded) {
-      this.client.get(Setting.apiurl+ +'categories').subscribe((response:any)=>{
+      this.client.get(Setting.apiurl+'categories').subscribe((response:any)=>{
         this.categories=response;
-        this.categories=this.categories.slice(0,10);
+        this.categories=this.categories.slice(0,4);
         console.log(this.categories);
       });
 
