@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/Model/product';
 
 @Component({
   selector: 'app-productgroup',
@@ -13,4 +14,7 @@ export class ProductgroupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  trackBy(index: number, name: Product): number {
+    return name.id;
+  }
 }

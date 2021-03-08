@@ -20,7 +20,7 @@ import { ProductgroupComponent } from './components/partial/productgroup/product
 import { HomepageService } from './services/homepage.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FavService } from './services/fav.service';
-import { ShopmainComponent } from './components/page/shop/shopmain/shopmain.component';
+import { ShopmainComponent } from './components/page/shop/shopmain/shopmain.component'; 
 import { QtyComponent } from './components/partial/qty/qty.component';
 import { VariantChooserComponent } from './components/partial/variant-chooser/variant-chooser.component';
 import { SmallComponent } from './components/partial/imageviwer/small/small.component';

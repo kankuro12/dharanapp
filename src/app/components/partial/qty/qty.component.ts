@@ -9,12 +9,12 @@ export class QtyComponent implements OnInit {
 
   constructor() { }
   qty:number=1;
-  @Input()max:string
+  @Input()max:number
   ngOnInit(): void {
   }
 
   addQty(num){
-    let _max=parseFloat(this.max);
+    let _max=parseFloat(this.max.toString());
     this.qty+=parseFloat( num);
     if(this.qty<1){
       this.qty=1;

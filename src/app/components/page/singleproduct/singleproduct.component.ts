@@ -29,7 +29,7 @@ export class SingleproductComponent implements OnInit {
   public innerWidth: any;
   price = 0;
   oldprice = 0;
-  stock = 0;
+  stock:number = 0;
   product: any;
   id: string;
   variantstock: any;

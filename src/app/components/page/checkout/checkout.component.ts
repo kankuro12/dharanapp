@@ -172,4 +172,13 @@ export class CheckoutComponent implements OnInit {
 
     return true;
   }
+
+  changed(data:Cart){
+    this.cartservice.changeQty(data.qty,data.ident);
+  }
+
+  delete(data:Cart){
+    console.log('on cart window');
+    this.cartservice.remove(data.ident);
+  }
 }

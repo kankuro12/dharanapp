@@ -28,6 +28,7 @@ const routes: Routes = [
         path: 'shop',
         component: ShopmainComponent,
       },
+      { path: '',   redirectTo: '/home', pathMatch: 'full' },
     ],
   },
   {

@@ -16,7 +16,6 @@ export class ShopService {
   lock=false;
   url=Setting.url;
   constructor(private client :ApiService,private loader:LoaderService) {
-
     this.loadData();
    }
 

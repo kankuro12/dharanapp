@@ -1,4 +1,4 @@
-<div class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+<div class="bb"  (scroll)="scroll($event)">
   <app-othenav [title]="this.cattitle.name" #navbar></app-othenav>
   <div class="main">
       <div class="post" *ngIf="products.length>0">

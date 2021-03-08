@@ -10,7 +10,7 @@ export class ScrollserviceService {
 
   set(_top){
     this.top=_top;
-    // this.scrollEvent.emit(this.top);
+    this.scrollEvent.emit(this.top);
     // console.log("from scroll service",this.top)
   }
 }

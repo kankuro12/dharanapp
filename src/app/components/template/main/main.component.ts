@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   scroll(event){
     this.topped=event.srcElement.scrollTop>40;
     this.navbar.istop=this.topped;
-    // console.log("from main",event.srcElement.scrollTop);
-    // this.scrollevent.set(event.srcElement.scrollTop);
+    console.log("from main",event.srcElement.scrollTop);
+    this.scrollevent.set(event.srcElement.scrollTop);
   }
 }

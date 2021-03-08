@@ -1,4 +1,4 @@
-<dib class="bb" [ngClass]="{'topped': topped}" (scroll)="scroll($event)">
+<div class="bb"  >
   <app-othenav title="My Cart" [backshow]="false" #navbar></app-othenav>
   <div class="main">
     <div *ngFor="let item of this.cartservice.items">
@@ -19,4 +19,4 @@
     </div>
   </div>
   <app-mobilefooter></app-mobilefooter>
-</dib>
+</div>

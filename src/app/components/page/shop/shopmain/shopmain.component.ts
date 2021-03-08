@@ -37,6 +37,9 @@ export class ShopmainComponent implements OnInit {
   tooglecat(){
     this.catshow=!this.catshow;
   }
+  top(e){
+    console.log(e);
+  }
   scrolled(top){
       this.ontop=top>120;
       console.log(this.ontop,this.products.nativeElement.offsetHeight,top+(window.innerHeight*1.5));
