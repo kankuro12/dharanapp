@@ -4,11 +4,11 @@
   
   "assetGroups": [
     {
-      "name": "app",
+      "name": "BigByapaar",
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
+          "/assets/favicon.ico",
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
