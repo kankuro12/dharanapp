@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.bigbyapaar.bigbyapaar;
 
 import android.os.Bundle;
 import android.view.Window;
