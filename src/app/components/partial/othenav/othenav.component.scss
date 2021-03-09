@@ -12,10 +12,12 @@
     // }
     transition: 0.3s all;
     z-index:99;
-    padding:20px 10px 15px 10px;
-    background: #27AE60;
-    position: sticky;
+    padding:12px 10px 15px 10px;
+    background: #27AE60; 
+    position: fixed;
+    left:0px;right:0px;
     top:0px;
+    height:50px;
     .title{
         color:white;
         text-align: center;
@@ -24,7 +26,7 @@
     }
     .back{
         position:absolute;
-        left:15px;top:15px;
+        left:15px;top:10px;
         background:transparent;
         outline: transparent;
         

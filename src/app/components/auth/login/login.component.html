@@ -16,6 +16,9 @@
               <input type="password" placeholder="Enter your Password" formControlName="password">
             </div>
           </form>
+          <div class="text-right">
+              <span class="forgot" [routerLink]="['/forgot']"  >Forgot Password?</span>
+          </div>
           <div class="fg">
             <button class="loginbtn" (click)="login()">Login</button>
           </div>

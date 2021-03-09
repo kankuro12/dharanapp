@@ -17,6 +17,8 @@ import { CategorywiseComponent } from './components/page/categorywise/categorywi
 import { CategoriesComponent } from './components/page/home/categories/categories.component';
 import { CategoryallComponent } from './components/page/categoryall/categoryall.component';
 import { SearchComponent } from './components/page/search/search.component';
+import { PforgotComponent } from './components/auth/password/pforgot/pforgot.component';
+import { PresetComponent } from './components/auth/password/preset/preset.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'forgot', 
+    component: PforgotComponent,
+  },
+  {
+    path: 'reset', 
+    component: PresetComponent,
   },
   {
     path: 'user',

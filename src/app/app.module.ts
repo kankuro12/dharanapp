@@ -45,9 +45,11 @@ import { SingleorderComponent } from './components/page/orders/singleorder/singl
 import { CategoryallComponent } from './components/page/categoryall/categoryall.component';
 import { CategorywiseComponent } from './components/page/categorywise/categorywise.component';
 import { SearchComponent } from './components/page/search/search.component';
+import { PforgotComponent } from './components/auth/password/pforgot/pforgot.component';
+import { PresetComponent } from './components/auth/password/preset/preset.component';
 
 @NgModule({
-  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent],
+  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent,PforgotComponent,PresetComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule,ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService,AuthserviceService,ApiService,LoaderService],
