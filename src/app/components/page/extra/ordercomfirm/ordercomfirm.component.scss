@@ -1,0 +1,22 @@
+.order-success{
+    height:100vh;
+    text-align: center;
+    background:#27ae60;
+    color:white;
+    .content{
+        position:absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right:0;
+        left:0;
+        padding:10px;
+        .icon{
+            text-align:center;
+            left:calc(50% - 50px);
+
+            svg{
+                display: inline;
+            }
+        }
+    }
+}

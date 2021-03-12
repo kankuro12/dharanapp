@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
+import { settings } from 'cluster';
 import { Setting } from 'src/app/Model/setting';
 import { User } from 'src/app/Model/user';
 import { ApiService } from '../api.service';
@@ -29,18 +30,24 @@ export class AuthserviceService {
       this.client.updateToken(this.token);
         this.client.getWithAuth(Setting.apiurl+ 'auth/user').
         subscribe((res:any)=>{
-          this.user=new User();
-          this.user.fname=res.acc.fname;
-          this.user.lname=res.acc.lname;
-          this.user.address=res.acc.address;
-          this.user.phone=res.acc.mobile_number;
-          this.user.email=res.user.email;
+          this.setUser(res);
           this.logged=true;
           console.log(this.user);
           this.authSet.emit(null);
         });
     }
 
+  }
+
+  setUser(res:any){
+    this.user=new User();
+    this.user.fname=res.acc.fname;
+    this.user.lname=res.acc.lname;
+    this.user.address=res.acc.address;
+    this.user.phone=res.acc.mobile_number;
+    this.user.email=res.user.email;
+    this.user.image=Setting.url+res.acc.profile_img;
+    console.log(this.user);
   }
 
   canActivate(ext: ActivatedRouteSnapshot,ate: RouterStateSnapshot  ) {
@@ -63,12 +70,7 @@ export class AuthserviceService {
       if(res.status){
         localStorage.setItem('access_token',res.token);
         this.token=res.token;
-        this.user=new User();
-        this.user.fname=res.acc.fname;
-        this.user.lname=res.acc.lname;
-        this.user.address=res.acc.address;
-        this.user.phone=res.acc.mobile_number;
-        this.user.email=res.user.email;
+        this.setUser(res);
         this.client.updateToken(this.token);
         this.logged=true;
         this.signupsucceeded.emit(res);
@@ -91,12 +93,7 @@ export class AuthserviceService {
      if(res.status){
        localStorage.setItem('access_token',res.token);
        this.token=res.token;
-       this.user=new User();
-       this.user.fname=res.acc.fname;
-       this.user.lname=res.acc.lname;
-       this.user.address=res.acc.address;
-       this.user.phone=res.acc.mobile_number;
-       this.user.email=res.user.email;
+       this.setUser(res);
        this.client.updateToken(this.token);
        this.logged=true;
        this.signupsucceeded.emit(res);

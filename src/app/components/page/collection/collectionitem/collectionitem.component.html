@@ -1,0 +1,19 @@
+<div class="col-item">
+  <img [src]="url+coll.collection_image" alt="">
+  <div class="col-desc">
+    <div class="title">
+
+      {{coll.collection_name}}
+    </div>
+    <div class="desc">
+      {{coll.collection_description}}
+
+    </div>
+
+  </div>
+  <div class="product-coll">
+    <div class="products" *ngFor="let item of coll.products;"> 
+        <img class="nooutline" [src]="url+item.product_images" alt="" [routerLink]="['/product', item.product_id]">
+    </div>
+  </div>
+</div>

@@ -15,7 +15,7 @@ export class PresetComponent implements OnInit {
   password:string="";
   retypepassword:string="";
   constructor(private client: ApiService, private router: Router) { }
-  lock=false;
+  lock:boolean=false;
   ngOnInit() { }
 
   close() {

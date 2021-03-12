@@ -1,0 +1,39 @@
+.col-item{
+    
+    border-radius:15px;
+    background:white;
+    overflow: hidden;
+    margin-bottom:15px;
+    img{
+        width:100%;
+    }
+    .col-desc{
+        padding:10px;
+        .title{
+            font-weight:600;
+        }
+        .desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            -webkit-box-orient: vertical;
+         }
+    }
+    .product-coll{
+        padding:10px 5px;
+        display:flex;
+        .products{
+            margin:5px;
+            flex:1;
+            border-radius: 10px;
+            max-width: 25%;
+            box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.4);
+            overflow:hidden;
+            img{
+                height:100%;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -32,6 +32,14 @@ export class ApiService {
     return this.client.post(url,data,{headers:this.headers});
 
   }
+  postFile(url,data:FormData){
+    let fileheaders = new HttpHeaders()
+    .append('Content-Type', 'multipart/form-data')
+    .append('accept', 'application/json')
+    .append('xpsu', '123456');
+    return this.client.post(url,data,{headers:fileheaders});
+
+  }
 
   getWithAuth(url){
     
@@ -39,6 +47,15 @@ export class ApiService {
   }
   postWithAuth(url,data){
     return this.client.post(url,data,{headers:this.authheaders});
+
+  }
+  postFileWithAuth(url,data:FormData){
+    let fileheaders = new HttpHeaders()
+    // .append('Content-Type', 'multipart/form-data')
+    // .append('accept', 'application/json')
+    .append('xpsu', '123456')
+    .append("Authorization","Bearer "+this.token);
+    return this.client.post(url,data,{headers:fileheaders});
 
   }
 }

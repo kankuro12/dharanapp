@@ -5,11 +5,9 @@
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
-
     "SplashScreen": {
-      "launchShowDuration": 10000
+      "launchShowDuration": 5000
     }
-
   },
   "cordova": {}
 }

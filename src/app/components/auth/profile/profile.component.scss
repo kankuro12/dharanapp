@@ -1,0 +1,115 @@
+.profile{
+    height: 90vh;
+    overflow-y: scroll;
+    position: absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    background:#f1f1f1;
+    .back{
+        position:absolute;
+        top:10px;
+        left:15px;
+        background:transparent;
+        border:transparent;
+        outline: transparent;
+    }
+    .profile-image{
+        z-index:10;
+        padding:50px 10px 10px 20px;
+        text-align: center;
+        background:#27ae60;
+        position:relative;
+        .dd{
+            display:inline-block;
+            width:75px;
+            height: 75px;
+            border-radius:50%;
+            border:2px solid #f1f1f1;
+            background:#f7f7f7;
+            overflow: hidden;
+            display: inline-block;
+            img{
+                width:100%;
+            }
+        }
+        .info{
+            flex-grow: 1;
+            text-align: left;
+            padding:10px;
+            color:white;
+            font-weight: 500;
+            font-size:1.2rem;
+            .phone{
+                font-size: 1rem;;
+            }
+        }
+        .editor{
+            position:absolute;
+            right:15px;
+            bottom:-25px;
+            width:50px;
+            height:50px;
+            background:white;
+            border-radius:50%;
+            border:1px solid white;
+            box-shadow: 0px 0px 20px 0px rgb(0, 0, 0);
+            padding-top:12px;
+        }
+    }
+    .detail{
+        padding:10px;
+        margin-bottom:10px;
+        background:white;
+        &:last-child{
+            margin-bottom: 0px !important;
+        }
+        .title{
+            color:#27ae60;
+            font-weight:600;
+
+        }
+        .option{
+            margin:10px 5px;
+            border-bottom:1px solid #979797;
+            padding-bottom:5px;
+            .option-title{
+                font-weight: 500;
+                color:black;
+            }
+            .option-text{
+                color:#979797;
+                font-weight: 500;
+                font-size:0.8rem;
+                input{
+                    width:100%;
+                    border:none;
+                    background:transparent;
+                    outline: transparent;
+                    pointer-events: none;
+                }
+                
+            }
+            &:last-of-type{
+                border-bottom: none  !important;
+            }
+        }
+        .menu{
+            margin:10px 5px;
+            display: flex;
+            // border-bottom:1px solid #979797;
+            // padding-bottom:10px;
+            .menu-icon{
+                margin-right:10px;
+            }
+            .menu-text{
+                padding-top:5px;
+                flex-grow: 1;
+            }
+            &:last-of-type{
+                border-bottom: none  !important;
+            }
+        }
+    }
+}

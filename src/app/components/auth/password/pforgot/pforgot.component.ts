@@ -9,8 +9,8 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./pforgot.component.scss'],
 })
 export class PforgotComponent implements OnInit {
-
-  phone="9800916365"
+ lock=false;
+  phone=""
   constructor(private client:ApiService,private router :Router) { }
 
   ngOnInit() {}
@@ -20,9 +20,18 @@ export class PforgotComponent implements OnInit {
   }
 
   sendResetCode(){
-    this.client.post(Setting.apiurl+"auth/forgotpasswordPhone",{"phone":this.phone})
-    .subscribe((res)=>{
-      this.router.navigate(['/reset'])
-    })
+    if(!this.lock){
+      if(this.phone.length!=10){
+        alert("Please Enter Valid Phone Number");
+        return false;
+      }
+      this.lock=true;
+      this.client.post(Setting.apiurl+"auth/forgotpasswordPhone",{"phone":this.phone})
+      .subscribe((res)=>{
+        this.lock=false;
+        this.router.navigate(['/reset']);
+
+      })
+    }
   }
 }

@@ -4,4 +4,5 @@ export class User {
     phone:string;
     email:string;
     address:string;
+    image:string;
 }

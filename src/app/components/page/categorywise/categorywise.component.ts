@@ -16,13 +16,15 @@ import { OthenavComponent } from '../../partial/othenav/othenav.component';
 export class CategorywiseComponent implements OnInit {
   url=Setting.url;
   topped=false;
-  constructor(public client: ApiService,private router:Router, private route: ActivatedRoute,public scrolle:ScrollserviceService,public cattitle:CategorytitleService,private loader:LoaderService) { }
+  constructor(public client: ApiService,private router:Router, private route: ActivatedRoute,public scrolle:ScrollserviceService,public cattitle:CategorytitleService,private loader:LoaderService) { 
+
+  }
   products:Product[]=[];
   id:any;
+  loaded=false;
   
   @ViewChild('navbar') navbar:OthenavComponent
   ngOnInit() {
-    this.loader.show(true);
     this.id = this.route.snapshot.paramMap.get('id');
     this.client.get(Setting.apiurl+"category/"+this.id).subscribe((res:any)=>{
       let p:Product[]=[];
@@ -36,9 +38,9 @@ export class CategorywiseComponent implements OnInit {
         pi.image=this.url+pp.product_images;
         p.push(pi);
       });
+      this.loaded=true;
       this.products = p;
       console.log(this.products);
-      this.loader.show(false);
 
     });
   }

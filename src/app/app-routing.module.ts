@@ -19,6 +19,10 @@ import { CategoryallComponent } from './components/page/categoryall/categoryall.
 import { SearchComponent } from './components/page/search/search.component';
 import { PforgotComponent } from './components/auth/password/pforgot/pforgot.component';
 import { PresetComponent } from './components/auth/password/preset/preset.component';
+import { CollectionComponent } from './components/page/collection/collection.component';
+import { SinglecollectionComponent } from './components/page/collection/singlecollection/singlecollection.component';
+import { ProfileComponent } from './components/auth/profile/profile.component';
+import { OrdercomfirmComponent } from './components/page/extra/ordercomfirm/ordercomfirm.component';
 
 const routes: Routes = [
   {
@@ -36,6 +40,14 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent,
+  },
+  {
+    path: 'collections',
+    component: CollectionComponent,
+  },
+  {
+    path: 'collection/:id',
+    component: SinglecollectionComponent,
   },
   {
     path: 'category/:id',
@@ -58,6 +70,10 @@ const routes: Routes = [
     component: CheckoutComponent,
   },
   {
+    path:"ordersuccess",
+    component:OrdercomfirmComponent
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -76,6 +92,10 @@ const routes: Routes = [
   {
     path: 'user',
     component: DashboardComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: 'orders/:status',

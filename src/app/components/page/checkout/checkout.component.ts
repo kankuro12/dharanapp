@@ -18,6 +18,7 @@ import { CheckoutModel } from 'src/app/Model/checkout-model';
 import { CheckoutModelItem } from 'src/app/Model/checkout-model-item';
 import { Cart } from 'src/app/Model/cart';
 import { Setting } from 'src/app/Model/setting';
+import { OrdercacheService } from 'src/app/services/extra/ordercache.service';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -38,7 +39,7 @@ export class CheckoutComponent implements OnInit {
     repass:string="";
     extramessage:string="";
     
-  constructor(private formBuilder: FormBuilder,private loader:LoaderService,public scrolle:ScrollserviceService,public cartservice:CartService,private client:ApiService,public auth:AuthserviceService,public router:Router) { 
+  constructor(private formBuilder: FormBuilder,private loader:LoaderService,public scrolle:ScrollserviceService,public cartservice:CartService,private client:ApiService,public auth:AuthserviceService,public router:Router,private orderCache:OrdercacheService) { 
       console.log('user loaded via constructor');
       this.setuser();
 
@@ -123,9 +124,11 @@ export class CheckoutComponent implements OnInit {
       obj.items=items;
       console.log("checkout object",obj);
       
-      this.client.postWithAuth(Setting.apiurl+"booking/checkout",obj).subscribe((res)=>{
+      this.client.postWithAuth(Setting.apiurl+"booking/checkout",obj).subscribe((res:any)=>{
+        this.orderCache.order=res.order;
           this.cartservice.emptyCart();
-          this.router.navigate(['/user']);
+          this.router.navigate(['/ordersuccess']);
+        
       }, 
       (err)=>{
         alert('error');

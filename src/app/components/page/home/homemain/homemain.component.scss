@@ -1,13 +1,22 @@
 .section{
     background:white;
     margin:10px 5px;
-    border-radius: 5px;;
+    border-radius: 15px;;
     padding:10px;
     .title{
         font-weight:600;
         font-size:1.1rem;
         padding-bottom:5px;
         color:#464646;
+        font-size:0.9rem;
     }
     
+}
+
+.load{
+    background:white;
+    margin:5px 5px;
+    border-radius: 15px;;
+    padding:10px;
+    min-height:100vh;
 }

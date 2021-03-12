@@ -47,12 +47,18 @@ import { CategorywiseComponent } from './components/page/categorywise/categorywi
 import { SearchComponent } from './components/page/search/search.component';
 import { PforgotComponent } from './components/auth/password/pforgot/pforgot.component';
 import { PresetComponent } from './components/auth/password/preset/preset.component';
+import { CollectionComponent } from './components/page/collection/collection.component';
+import { CollectionitemComponent } from './components/page/collection/collectionitem/collectionitem.component';
+import { SinglecollectionComponent } from './components/page/collection/singlecollection/singlecollection.component';
+import { ProfileComponent } from './components/auth/profile/profile.component';
+import { OrdercacheService } from './services/extra/ordercache.service';
+import { OrdercomfirmComponent } from './components/page/extra/ordercomfirm/ordercomfirm.component';
 
 @NgModule({
-  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent,PforgotComponent,PresetComponent],
+  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent,PforgotComponent,PresetComponent,CollectionComponent,CollectionitemComponent,SinglecollectionComponent,ProfileComponent,OrdercomfirmComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule,ReactiveFormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService,AuthserviceService,ApiService,LoaderService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService,AuthserviceService,ApiService,LoaderService,OrdercacheService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
