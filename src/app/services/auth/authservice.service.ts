@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
-import { settings } from 'cluster';
 import { Setting } from 'src/app/Model/setting';
 import { User } from 'src/app/Model/user';
 import { ApiService } from '../api.service';

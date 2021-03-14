@@ -12,6 +12,10 @@ export class ProfileComponent implements OnInit {
   fname="";
   lname="";
   address="";
+  tempfname="";
+  templname="";
+  tempaddress="";
+  initedit=false;
   constructor(private auth:AuthserviceService,private client:ApiService) {
     this.auth.authSet.subscribe(data=>{
       this.fname=this.auth.user.fname;
@@ -47,5 +51,23 @@ export class ProfileComponent implements OnInit {
     });
 
     reader.readAsDataURL(file);
+  }
+
+  showEdit(){
+    this.initedit=true;
+    this.tempfname=this.fname;
+    this.templname=this.lname;
+    this.tempaddress=this.address;
+  }
+
+  closeEdit(){
+    this.initedit=false;
+    this.fname=this.tempfname;
+    this.lname=this.templname;
+    this.address=this.tempaddress;
+  }
+
+  update(){
+    // this.client.post(Setting.apiurl+"")
   }
 }

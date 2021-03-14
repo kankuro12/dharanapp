@@ -57,13 +57,13 @@
       <div class="option-text">Tap To Change Email</div>
     </div>
   </div>
-  <div class="detail">
-    <div class="title d-flex justify-content-between">
+  <div class="detail" [ngClass]="{'edit': initedit}">
+    <div class="title d-flex justify-content-between" *ngIf="!initedit">
       <span>
         Info
 
       </span>
-      <span>
+      <span (click)="showEdit()">
         Edit Info
       </span>
     </div>
@@ -78,6 +78,14 @@
     <div class="option">
       <div class="option-title">Address</div>
       <div class="option-text"><input type="text" [(ngModel)]="address"></div>
+    </div>
+    <div class="row" *ngIf="initedit">
+      <div class="col-6">
+        <button class="btn btn-primary btn-block" (click)="update()">Save</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-danger btn-block" (click)="closeEdit()">Cancel</button>
+      </div>
     </div>
   </div>
   <div class="detail">
