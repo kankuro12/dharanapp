@@ -21,9 +21,15 @@ export class ViewedService {
       v.id=id;
       v.name=name;
       v.image=image;
-      this.views.push(v);
+      this.views.unshift(v);
     }
     console.log(this.views);
+    localStorage.setItem("view", JSON.stringify(this.views));
+
+  }
+  clear(){
+    this.views=[];
+    
     localStorage.setItem("view", JSON.stringify(this.views));
 
   }

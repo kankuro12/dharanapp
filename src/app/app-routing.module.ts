@@ -23,6 +23,8 @@ import { CollectionComponent } from './components/page/collection/collection.com
 import { SinglecollectionComponent } from './components/page/collection/singlecollection/singlecollection.component';
 import { ProfileComponent } from './components/auth/profile/profile.component';
 import { OrdercomfirmComponent } from './components/page/extra/ordercomfirm/ordercomfirm.component';
+import { AllviewComponent } from './components/auth/alldashboard/allview/allview.component';
+import { AllfavComponent } from './components/auth/alldashboard/allfav/allfav.component';
 
 const routes: Routes = [
   {
@@ -101,6 +103,14 @@ const routes: Routes = [
     path: 'orders/:status',
     component: OrdersComponent,
     canActivate: [AuthserviceService],
+  },
+  {
+    path: 'allview',
+    component: AllviewComponent,
+  },
+  {
+    path: 'allfav',
+    component: AllfavComponent,
   },
 ];
 @NgModule({

@@ -13,13 +13,13 @@ export class ProductComponent implements OnInit {
   @Input() product:Product;
   constructor(public fav:FavService) { }
 
-  managefav(id){
-    this.fav.addFav(id);
-    this.liked=this.fav.favs.includes(this.product.id);
+  managefav(id,name,image){
+    this.fav.addFav(id,name,image);
+    this.liked=this.fav.includes(this.product.id);
 
   }
   ngOnInit(): void {
-    this.liked=this.fav.favs.includes(this.product.id);
+    this.liked=this.fav.includes(this.product.id);
   }
 
 }

@@ -67,8 +67,8 @@ export class SingleproductComponent implements OnInit {
     this.location.back();
   }
   managefav(id) {
-    this.fav.addFav(id);
-    this.active = this.fav.favs.includes(this.product.product_id);
+    this.fav.addFav(id,this.product.product_name,this.images[0]);
+    this.active = this.fav.includes(this.product.product_id);
   }
 
   ngOnInit(): void {
@@ -85,7 +85,7 @@ export class SingleproductComponent implements OnInit {
           this.product.product_name,
           this.product.product_images
         );
-        this.active = this.fav.favs.includes(this.product.product_id);
+        this.active = this.fav.includes(this.product.product_id);
         if (this.product.stocktype == 1) {
           this.product.variants.forEach((attr) => {
             let v = new Variant();

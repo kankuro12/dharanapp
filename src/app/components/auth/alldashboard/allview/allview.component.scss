@@ -1,0 +1,46 @@
+.bb {
+    background: #27ae60;
+    overflow: scroll;
+    margin-top:49px;
+    &.topped {
+      background: #efefef !important;
+    }
+    .main {
+      background: #efefef;
+      
+      width: 100%;
+      /* margin: 0px 10px; */
+      padding: 7px 7px;
+      overflow: scroll;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      bottom: 0px;
+      min-height: 100vh;
+      div.post {
+        background: white;
+        border-radius: 15px;
+        margin: 5px;
+        padding: 10px;
+        margin-bottom:10px;
+        .product{
+          border-radius:15px;
+          overflow: hidden;
+          border:3px solid white;
+          box-shadow: 0px 0px 3px 0px #afafaf;
+        }
+      }
+    }
+}
+
+.clear{
+  // position: absolute;
+  // right:10px;
+  // top:12px;
+  // z-index:1001;
+  background:transparent;
+  border:transparent;
+  outline:transparent;
+  font-size:0.9rem;
+  font-weight:600;
+  color:#cb2027;
+}

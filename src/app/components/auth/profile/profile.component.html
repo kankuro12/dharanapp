@@ -97,7 +97,7 @@
 
     </div>
 
-    <div class="menu" >
+    <div class="menu" (click)="showChangePass()">
       <div class="menu-icon">
         <svg version="1.1" height="30" width="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 512.002 512.002" style="enable-background:new 0 0 512.002 512.002;"
@@ -157,7 +157,7 @@
       </div>
       <div class="menu-text">Change Password</div>
     </div>
-    <div class="menu"  [routerLink]="['/logout']">
+    <div class="menu"  (click)="logout()">
       <div class="menu-icon">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172"
           style=" fill:#000000;">
@@ -179,3 +179,4 @@
 
   </div>
 </div>
+<app-changepassword #changepass></app-changepassword>

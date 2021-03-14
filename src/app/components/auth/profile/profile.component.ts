@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Setting } from 'src/app/Model/setting';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthserviceService } from 'src/app/services/auth/authservice.service';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +18,8 @@ export class ProfileComponent implements OnInit {
   templname="";
   tempaddress="";
   initedit=false;
-  constructor(private auth:AuthserviceService,private client:ApiService) {
+  @ViewChild('changepass') changepass:ChangepasswordComponent
+  constructor(private auth:AuthserviceService,private client:ApiService,private router:Router) {
     this.auth.authSet.subscribe(data=>{
       this.fname=this.auth.user.fname;
       this.lname=this.auth.user.lname;
@@ -69,5 +72,12 @@ export class ProfileComponent implements OnInit {
 
   update(){
     // this.client.post(Setting.apiurl+"")
+  }
+  logout(){
+    this.auth.logOut();
+    this.router.navigate(['/user']);
+  }
+  showChangePass(){
+    this.changepass.show();
   }
 }

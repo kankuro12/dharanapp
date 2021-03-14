@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Viewed } from '../Model/viewed';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavService {
 
-  favs:number[]=[];
+  favs:Viewed[]=[];
   constructor() { 
     var data=localStorage.getItem('fav');
     console.log(data);
@@ -13,15 +14,30 @@ export class FavService {
       this.favs=JSON.parse(data);
     }
   }
-  addFav(id){
-    if(!this.favs.includes(id)){
-      this.favs.push(id);
+  addFav(id,name,image){
+    let i = this.favs.findIndex((obj => obj.id == id));
+    if(i==-1){
+      let v=new Viewed();
+      v.id=id;
+      v.name=name;
+      v.image=image;
+      this.favs.unshift(v);
     }else{
-      var index=this.favs.findIndex(a=>a==id);
-      this.favs.splice(index,1);
+      this.favs.splice(i,1);
     }
     console.log(this.favs);
     localStorage.setItem("fav", JSON.stringify(this.favs));
 
+  }
+  clear(){
+    this.favs=[];
+
+    localStorage.setItem("fav", JSON.stringify(this.favs));
+
+  }
+
+  includes(id:number){
+    return this.favs.findIndex((obj => obj.id == id))!=-1;
+    
   }
 }

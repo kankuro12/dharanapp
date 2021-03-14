@@ -1,5 +1,6 @@
 .col-item{
     
+    box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.4);
     border-radius:15px;
     background:white;
     overflow: hidden;
@@ -19,16 +20,24 @@
             -webkit-line-clamp: 2; /* number of lines to show */
             -webkit-box-orient: vertical;
          }
+         .link{
+             color:#27ae60;
+             text-align:right;
+             padding:10px;
+             font-weight:600;
+         }
     }
     .product-coll{
         padding:10px 5px;
         display:flex;
         .products{
+            border:2px solid rgba(255, 255, 255,1);
+            box-shadow: 0px 0px 2px 0px #dbdbdb;
+            background:white;
             margin:5px;
             flex:1;
             border-radius: 10px;
             max-width: 25%;
-            box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.4);
             overflow:hidden;
             img{
                 height:100%;
