@@ -56,9 +56,12 @@ import { OrdercomfirmComponent } from './components/page/extra/ordercomfirm/orde
 import { ChangepasswordComponent } from './components/auth/changepassword/changepassword.component';
 import { AllviewComponent } from './components/auth/alldashboard/allview/allview.component';
 import { AllfavComponent } from './components/auth/alldashboard/allfav/allfav.component';
+import { CustomComponent } from './components/home/custom/custom.component';
+import { AdsComponent } from './components/home/ads/ads.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
 
 @NgModule({
-  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent,PforgotComponent,PresetComponent,CollectionComponent,CollectionitemComponent,SinglecollectionComponent,ProfileComponent,OrdercomfirmComponent,ChangepasswordComponent,AllviewComponent,AllfavComponent],
+  declarations: [CheckoutComponent,AppComponent,MainComponent,MobilenavComponent,MobilefooterComponent,CategoriesComponent,HomemainComponent,ProductComponent,ProductgroupComponent,ShopmainComponent,QtyComponent,VariantChooserComponent,SmallComponent,ImageviwerComponent,SingleproductComponent,SingletemplateComponent,OthenavComponent,CartComponent,CartitemComponent,LoginComponent,DashboardComponent,MaindashbaordComponent,SignupComponent,LoaderComponent,SingleorderComponent,OrdersComponent,CategoryallComponent,CategorywiseComponent,SearchComponent,PforgotComponent,PresetComponent,CollectionComponent,CollectionitemComponent,SinglecollectionComponent,ProfileComponent,OrdercomfirmComponent,ChangepasswordComponent,AllviewComponent,AllfavComponent,CustomComponent,AdsComponent,CarouselComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),HttpClientModule, NgbModule,BrowserAnimationsModule,CarouselModule,FormsModule,ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ScrollserviceService,HomepageService,FavService,AuthserviceService,ApiService,LoaderService,OrdercacheService],

@@ -12,8 +12,8 @@ export class HomemainComponent implements OnInit {
   constructor(public service:HomepageService,private loader:LoaderService) { }
 
   ngOnInit(): void {
-    this.service.loadProduct();
-    this.service.loadSlider();
+    // this.service.loadProduct();
+    // this.service.loadSlider();
   }
 
   ngAfterViewInit()	{
