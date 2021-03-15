@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { settings } from 'cluster';
+
 import { Product } from 'src/app/Model/product';
 import { Setting } from 'src/app/Model/setting';
 import { ApiService } from 'src/app/services/api.service';

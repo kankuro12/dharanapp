@@ -71,7 +71,14 @@ export class ProfileComponent implements OnInit {
   }
 
   update(){
-    // this.client.post(Setting.apiurl+"")
+    this.client.postWithAuth(Setting.apiurl+"auth/updateUserInfo",{fname:this.fname,lname:this.lname,address:this.address})
+    .subscribe((res)=>{
+      alert('Info Updated Sucessfully');
+      this.initedit=false;
+      this.auth.user.fname=this.fname;
+      this.auth.user.lname=this.lname;
+      this.auth.user.address=this.address;
+    })
   }
   logout(){
     this.auth.logOut();
