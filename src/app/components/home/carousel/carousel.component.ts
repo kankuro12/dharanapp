@@ -10,6 +10,7 @@ import { Setting } from 'src/app/Model/setting';
 export class CarouselComponent implements OnInit {
   @Input()item:any;
   images:string[]=[];
+  url=Setting.url;
   customOptions: OwlOptions = {
     loop: false,
     items: 1,
@@ -18,12 +19,19 @@ export class CarouselComponent implements OnInit {
   };
   constructor() { }
 
+  getData(e){
+    let temp=this.images;
+    console.log(temp,"carou");
+    console.log(e,"carou");
+  }
   ngOnInit() {
+  console.log(this.item,"carou");
   let temparr=[];
     this.item.sliders.forEach(element => {
       temparr.push(Setting.url+element.image);
     });
     this.images=temparr;
+    console.log(this.images,"carou");
   }
 
 }

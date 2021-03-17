@@ -1,9 +1,16 @@
 <div class="carouselsection">
-  <owl-carousel-o [options]="customOptions">
+  <!-- <owl-carousel-o [options]="customOptions" (initialized)="getData($event)">
    
-    <ng-template *ngFor="let image of images" carouselSlide>
-        <img src='{{image}}' class="w-100 c-image" alt="">
+    <ng-template *ngFor="let slider of item.sliders" carouselSlide>
+      {{slider.image}}
+        <img src='{{url+slider.image}}' class="w-100 c-image" alt="">
     </ng-template>
 
-</owl-carousel-o>
+</owl-carousel-o> -->
+<ion-slides pager="true" [options]="slideOpts">
+  <ion-slide *ngFor="let slider of item.sliders">
+    <img src='{{url+slider.image}}' class="w-100 c-image" alt="">
+  </ion-slide>
+  
+</ion-slides>
 </div>

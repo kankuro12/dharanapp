@@ -1,0 +1,140 @@
+.add-review{
+    padding:10px;
+    text-align:center;
+    margin-bottom:10px;
+    &.hasreview{
+    border-bottom:1px white solid;
+
+    }
+    button{
+        padding:5px 10px;
+        border:none;
+        background: white;
+        color:#27ae60;
+        border-radius:5px;
+        font-weight:600;
+    }
+}
+.product-rating{
+    padding-bottom:5px;
+    margin-bottom:5px;
+    border-bottom:1px white solid;
+    &:last-of-type{
+        border-bottom:none !important;
+
+    }
+    .image-holder{
+        height:40px;
+        width:40px;
+        border-radius:20px;
+        overflow:hidden;
+        border:1px solid white;
+
+    }
+    .review-user{
+        flex-grow: 1;
+        padding:5px 10px;
+        line-height:10px;
+        .name{
+            padding: 0;
+            margin-bottom:5px;
+        }
+    }
+    .review{
+        font-weight:400;
+        font-size: 0.7rem;
+        text-indent: 50px;
+    }
+}
+
+.view-all{
+    text-align:right;
+    font-weight:500;
+    padding:0px 5px;
+}
+
+.zoomed{
+    .zommed-nav{
+        // height:50px;
+        position:relative;
+        text-align:center;
+        padding:15px;
+        background:#27ae60;
+        color:white;
+        .back{
+            position: absolute;
+        top: 12px;
+        left: 15px;
+        z-index: 1;
+        border:none;outline: transparent;background: transparent;
+        }
+        .add{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            z-index: 1;
+            border:none;outline: transparent;
+            padding:5px 10px;
+            background:#fff;
+            color:#27ae60;
+            border-radius:5px;
+
+        }
+    }
+    overflow: scroll;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background: white;
+    color:#27ae60;
+    bottom:0px;
+    right:0px;
+   
+    z-index:1002;
+    .product-rating{
+        padding:5px 20px;
+        margin:10px;
+        border-bottom:1px #27ae60 solid;
+        &:last-of-type{
+            border-bottom:none !important;
+    
+        }
+        // .image-holder{
+        //     height:40px;
+        //     width:40px;
+        //     border-radius:20px;
+        //     overflow:hidden;
+        //     border:1px solid white;
+    
+        // }
+        // .review-user{
+        //     flex-grow: 1;
+        //     padding:5px 10px;
+        //     line-height:10px;
+        //     .name{
+        //         padding: 0;
+        //         margin-bottom:5px;
+        //     }
+        // }
+        // .review{
+        //     font-weight:400;
+        //     font-size: 0.7rem;
+        //     text-indent: 50px;
+        // }
+    }
+}
+
+.star{
+    font-size:4rem;
+}
+
+.addreview{
+    top: 0px;
+    position: fixed;
+    z-index: 2;
+    background: #27ae60;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 20px;
+}

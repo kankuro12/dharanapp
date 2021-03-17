@@ -45,6 +45,7 @@ export class AuthserviceService {
     this.user.address=res.acc.address;
     this.user.phone=res.acc.mobile_number;
     this.user.email=res.user.email;
+    this.user.id=res.user.id;
     this.user.image=Setting.url+res.acc.profile_img;
     console.log(this.user);
   }

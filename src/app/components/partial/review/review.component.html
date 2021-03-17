@@ -1,0 +1,89 @@
+<div style="position: relative;">
+  <div class="add-review" [ngClass]="{'hasreview':this.totalreview.length>0}" *ngIf="this.auth.logged">
+    <button (click)="showAddReview()">
+      {{reviewBtnText}}
+    </button>
+  </div>
+  <div [ngClass]="{'zoomed': zoomed}">
+    <div class="zommed-nav" *ngIf="zoomed">
+      <button class="back" (click)="toogleZoom()">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172"
+          style=" fill:#000000;">
+          <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
+            stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+            font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <g fill="#fff">
+              <path
+                d="M70.08173,86l56.79928,-57.98798c2.53245,-2.58413 2.50661,-6.71875 -0.05169,-9.30288l-10.15565,-10.15565c-2.60997,-2.58413 -6.79628,-2.58413 -9.38041,0.02584l-72.27824,72.74339c-1.29207,1.29206 -1.9381,2.97176 -1.9381,4.67728c0,1.70553 0.64603,3.38522 1.9381,4.67728l72.27824,72.74339c2.58413,2.60997 6.77044,2.60997 9.38041,0.02584l10.15565,-10.15565c2.55829,-2.58413 2.58413,-6.71875 0.05169,-9.30288z">
+              </path>
+            </g>
+          </g>
+        </svg>
+      </button>
+      <button class="add" (click)="showAddReview()" *ngIf="this.auth.logged">
+       {{reviewBtnText}}
+      </button>
+      <span>
+        Reviews
+      </span>
+    </div>
+
+    <div class="product-rating" *ngFor="let item of reviews">
+      <div class="row m-0">
+        <div class="image-holder">
+          <img
+            src="{{url+item.profile_img}}"
+            alt="" class="profile">
+        </div>
+        <div class="review-user">
+          <p class="name">
+            {{item.fname}} {{item.lname}}
+          </p>
+          <ngb-rating [rate]="item.rating" [max]="5" [readonly]="true"></ngb-rating>
+        </div>
+
+      </div>
+      <div class="review">
+        {{item.rating_desc}}
+      </div>
+    </div>
+
+  </div>
+  <div class="view-all" (click)="toogleZoom()" *ngIf="!zoomed && totalreview.length>2">
+    view all
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" height="12px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;"
+      xml:space="preserve">
+      <g>
+        <g>
+          <path fill="#fff" d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
+           c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002
+           v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864
+           c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872
+           l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+        </g>
+      </g>
+
+    </svg>
+  </div>
+</div>
+
+<div class="addreview" *ngIf="reviewmanage">
+  <div style="font-size: 25px;" class="mb-1">
+    <ngb-rating [(rate)]="this.current" class="nooutline" [max]="5"></ngb-rating>
+  </div>
+  <div class="text-area">
+    <textarea placeholder="Your review"  [(ngModel)]="this.review_desc" class="form-control" rows="3" maxlength="160"></textarea>
+  </div>
+
+  <div class="save-review d-flex">
+    <div class="col-0 p-1"> 
+      <button class="btn btn-light btn-sm btn-block mt-2"  (click)="AddReview()">Save Review</button>
+    </div>
+    <div class="col-0 p-1"> 
+      <button class="btn btn-danger btn-sm btn-block mt-2" (click)="hideAddReview()">Cancel</button>
+    </div>
+  </div>
+
+</div>

@@ -20,4 +20,8 @@ export class HomemainComponent implements OnInit {
     console.log('after view init');
     this.loader.show(false);
   }
+
+  trackBy(index: number, name: any): number {
+    return name.id;
+  }
 }
