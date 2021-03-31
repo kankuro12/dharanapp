@@ -1,5 +1,5 @@
-<div class="shop" (scroll)="top($event)">
-  <div class="filter" #filter [ngClass]="{'top': ontop}">
+<div class="shop" (scroll)="top($event)" >
+  <div class="filter" #filter [ngClass]="{'top': ontop}" >
     <button class="filter-item" [routerLink]="['/categories']" >
       Categories
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="64" viewBox="0 0 172 172"
@@ -35,7 +35,22 @@
     </button>
   </div>
   <div #products>
+    <div #anchor></div>
     <app-productgroup [products]="shop.products"></app-productgroup>
+    <div class="pagination" *ngIf="shop.totalpages>0">
+      <div class="pagination-nav">
+        <button class="btn-nav" (click)="prev()" [disabled]="!shop.canprev">
+          << Prev
+        </button>
+        <button class="btn-nav" (click)="next()" [disabled]="!shop.cannext">
+          Next >>
+        </button>
+      </div>
+      <div class="numbers">
+        <span class="number-item"  *ngFor='let in of counter(shop.totalpages) ;let i = index' (click)="goToPage(i)" [ngClass]="{'selected': (i)==shop.page}">{{i+1}}</span>
+      </div>
+    </div>
+    
   </div>
 </div>
 

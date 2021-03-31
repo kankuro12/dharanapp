@@ -12,6 +12,8 @@ import { ShopService } from 'src/app/services/shop.service';
 export class ShopmainComponent implements OnInit {
 
   @ViewChild('products') products: ElementRef;
+  @ViewChild('anchor') pageInfo: ElementRef; 
+
   ontop:boolean=false;
   catshow:boolean=false;
   constructor(private scrollservice:ScrollserviceService,public shop:ShopService,private loader:LoaderService) {
@@ -20,6 +22,25 @@ export class ShopmainComponent implements OnInit {
         this.scrolled(data);
         console.log(data,window.innerHeight,this.products.nativeElement.offsetHeight);
       });
+  }
+  counter(i: number) {
+    return new Array(i);
+  }
+  goToPage(_page:number){
+    const targetElement = this.pageInfo.nativeElement;
+    targetElement.scrollIntoView({behavior: "auto"});
+    this.shop.paginate(_page);
+  }
+  prev(){
+    if(this.shop.canprev){
+      this.goToPage(this.shop.page-1);
+    }
+  }
+
+  next(){
+    if(this.shop.cannext){
+      this.goToPage(this.shop.page+1);
+    }
   }
 
   ngAfterViewInit()	{
@@ -42,11 +63,11 @@ export class ShopmainComponent implements OnInit {
   }
   scrolled(top){
       this.ontop=top>120;
-      console.log(this.ontop,this.products.nativeElement.offsetHeight,top+(window.innerHeight*1.5));
-      if((top+(window.innerHeight*1.5))>this.products.nativeElement.offsetHeight){
-        if(this.shop.hasmoredata){
-          this.shop.loadData();
-        }
-      }
+      // console.log(this.ontop,this.products.nativeElement.offsetHeight,top+(window.innerHeight*1.5));
+      // if((top+(window.innerHeight*1.5))>this.products.nativeElement.offsetHeight){
+      //   if(this.shop.hasmoredata){
+      //     this.shop.loadData();
+      //   }
+      // }
   }
 }

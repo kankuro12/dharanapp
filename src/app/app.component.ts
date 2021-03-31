@@ -10,13 +10,14 @@ import {
   Router
 } from '@angular/router';
 import { LoaderService } from './services/loader.service';
+import { ShopService } from './services/shop.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private auth:AuthserviceService,private router:Router,private loader:LoaderService) {
+  constructor(private auth:AuthserviceService,private router:Router,private loader:LoaderService,private shop:ShopService) {
      this.router.events.subscribe((event:Event)=>{
         switch (true) {
            case event instanceof NavigationStart:

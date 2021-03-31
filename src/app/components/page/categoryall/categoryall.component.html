@@ -4,8 +4,11 @@
       <div class="row m-0">
         <div class="col-4 p-0" *ngFor="let cat of categories">
           <div class="cat" (click)="loadProducts(cat)">
+            <div class="image-container" style="width:60%;padding:10px;border-radius:50%;text-align:center;background:white;margin-left:20%;">
 
-            <img style="width:60%" src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
+              <img  src="{{url+cat.cat_image}}" alt="">
+
+            </div>
             <div class="text">
                 {{ cat.cat_name }}
             </div>

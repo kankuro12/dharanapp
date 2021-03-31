@@ -13,7 +13,7 @@ import { OthenavComponent } from '../../partial/othenav/othenav.component';
 })
 export class CategoryallComponent implements OnInit {
   categories:any[]=[];
-  
+  url=Setting.url;
   constructor(public scrolle:ScrollserviceService,public client:ApiService,private router:Router,public cattitle:CategorytitleService) { }
   @ViewChild('navbar') navbar:OthenavComponent
   ngOnInit() {

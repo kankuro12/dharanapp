@@ -71,3 +71,4 @@ import { ReviewComponent } from './components/partial/review/review.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
+ 

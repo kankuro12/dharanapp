@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Setting } from 'src/app/Model/setting';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-
+  url=Setting.url;
   constructor(public cat:CategoryService) { }
   ngOnInit() {
   

@@ -6,7 +6,7 @@
   </div>
   <div class="category-container">
     <div class="category" *ngFor="let cat of this.cat.categories" [routerLink]="['/category',cat.cat_id]" routerLinkActive="router-link-active" >
-      <img  src="https://image.winudf.com/v2/image1/Y2x1Yi5waXhlbGJveC5pbnN0YXNxdWFyZV9pY29uXzE1NjY5OTkyNDJfMDYw/icon.png?w=&fakeurl=1" alt="">
+      <img  src="{{url+cat.cat_image}}" alt="">
       <div class="text">
           {{ cat.cat_name }}
       </div>
